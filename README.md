@@ -13,19 +13,29 @@ incorporando las mejores prácticas de IA y patrones de diseño.
     * Git
 
  ## Implementación
- ![image](https://github.com/user-attachments/assets/fb292b1b-f9a4-4022-ac93-6926c92a6c0b)
+ ![image](https://github.com/user-attachments/assets/0dd10764-2859-48ce-ac38-e5cbb57146ea)
+
 
 
  Para este proyecto se esta utilizando Java con el IDE Eclipse, se creo el proyecto y se implementaron las clases siguientes:
 
  *Producto
  
- ![image](https://github.com/user-attachments/assets/216c0672-2863-4b52-b0c1-542e3d935d21)
+ ![image](https://github.com/user-attachments/assets/248c5eae-d9a9-4d34-a529-a26ed5173117)
 
 
 *Categoria
 
 ![image](https://github.com/user-attachments/assets/44f909e6-90d2-4016-8cf5-575851015578)
+
+*Carrito de Compras
+
+![image](https://github.com/user-attachments/assets/9a013c70-30ac-4bf8-9408-7b013a09ee96)
+
+*Articulo del Carrito
+
+![image](https://github.com/user-attachments/assets/60e19a45-6e99-4a65-a406-1736966a6949)
+
 
  
  *Cliente
