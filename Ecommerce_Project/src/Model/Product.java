@@ -1,14 +1,14 @@
 package Model;
 
 public class Product {
-	private int id;
-    private String productCode;
-    private String name;
-    private String description;
-    private int stock;
-    private double price;
-    private int categoryId;
-    private boolean isActive;
+	protected int id;
+	protected String productCode;
+	protected String name;
+	protected String description;
+	protected int stock;
+	protected double price;
+	protected int categoryId;
+	protected boolean isActive;
 
     public Product(int id, String productCode, String name, String description, int stock, double price, int categoryId, boolean isActive) {
         this.id = id;
@@ -49,4 +49,6 @@ public class Product {
 
     public boolean isActive() { return isActive; }
     public void setActive(boolean active) { isActive = active; }
+    
+    public abstract void displayDetails();
 }

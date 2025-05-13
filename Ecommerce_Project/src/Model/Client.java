@@ -1,14 +1,14 @@
 package Model;
 
-public class Client {
-	private int id;
-    private String name;
-    private String lastName;
-    private String email;
-    private String password;
-    private String address;
-    private String phoneNumber;
-    private String gender;
+public abstract class Client {
+	protected int id;
+	protected String name;
+	protected String lastName;
+	protected String email;
+	protected String password;
+	protected String address;
+	protected String phoneNumber;
+	protected String gender;
 
     public Client(int id, String name, String lastName, String email, String password, String address, String phoneNumber, String gender) {
         this.id = id;
@@ -55,5 +55,7 @@ public class Client {
 
     public String getGender() { return gender; }
     public void setGender(String gender) { this.gender = gender; }
+    
+    public abstract void displayRole();
 
 }
