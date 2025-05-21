@@ -45,7 +45,7 @@ public class ShoppingCart {
         }
     }
 
-    // Sobrecarga Agregar por nombre y precio
+    // Sobrecarga 2: Agregar por nombre y precio
     public void addProduct(String name, double price, int quantity) {
         Product product = new PhysicalProduct(
             1,                         

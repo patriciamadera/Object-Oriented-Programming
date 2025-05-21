@@ -1,5 +1,6 @@
 package Model;
 
+//
 public class Main {
     public static void main(String[] args) {
         Product p1 = new PhysicalProduct(1, "Laptop", "Computadora portátil", null, 0, 1200.0, 0, true, 2.5, "30x20x3");
