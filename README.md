@@ -97,9 +97,28 @@ Para cada clase se crearon dos clases la cual se extienden de esas dos principal
 ![image](https://github.com/user-attachments/assets/3a14c96f-0813-497d-bd3e-a3360c11da9d)
 
 
+## Polimorfismo y Sobrecarga
+
+Agregar una nueva clase llamada ProductManager
+
+![image](https://github.com/user-attachments/assets/e2b66271-bf50-4ba0-9bd3-ad81802cbf7f)
 
  
+Como ya se habia agregado las clases Product que se extiende a las clases PhysicalProduct y DigitalProduct, se modifico la clase ShoppingCart 
+
+![image](https://github.com/user-attachments/assets/d72403c1-840a-4daf-8660-ef8f93fa88a5)
 
 
+![image](https://github.com/user-attachments/assets/c4606846-fcc3-44fa-a437-998d1419bd9b)
+
+
+Se creo una clase Main para probarlo
+
+![image](https://github.com/user-attachments/assets/f457f45c-0413-4292-854d-c736ac050119)
+
+
+Y esto fue lo que salio en la consola al correrlo
+
+![image](https://github.com/user-attachments/assets/bb6044ea-a07e-47ba-b8db-019419af01aa)
 
 
