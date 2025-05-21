@@ -15,6 +15,13 @@ public class ShoppingCart {
         this.items = new ArrayList<>();
         this.total = 0.0;
     }
+    
+    public ShoppingCart() {
+        this.id = 0;
+        this.clientId = 0;
+        this.items = new ArrayList<>();
+        this.total = 0.0;
+    }
 
     public void addProduct(Product product, int quantity) {
         boolean found = false;
@@ -29,6 +36,46 @@ public class ShoppingCart {
             items.add(new CartItem(product, quantity));
         }
         calculateTotal();
+    }
+    
+    public void addProduct(int productId, int quantity) {
+        Product product = buscarProductoPorId(productId);
+        if (product != null) {
+            addProduct(product, quantity);
+        }
+    }
+
+    // Sobrecarga 2: Agregar por nombre y precio
+    public void addProduct(String name, double price, int quantity) {
+        Product product = new PhysicalProduct(
+            1,                         
+            "PPT-001",                 
+            name,
+            "Producto generado automáticamente",
+            10,                         
+            price,
+            1,                          
+            true,                       
+            1.5,                        
+            "10x10x10"                  
+        );
+        addProduct(product, quantity);
+    }
+
+    // Simulación de búsqueda por ID (crea un producto digital)
+    private Product buscarProductoPorId(int id) {
+        return new DigitalProduct(
+            id,
+            "DIGI-" + id,
+            "Producto Digital Simulado",
+            "Generado automáticamente",
+            0,
+            9.99,
+            1,
+            true,
+            "MP4",
+            100.0
+        );
     }
 
     public void removeProduct(int productId) {
@@ -47,6 +94,8 @@ public class ShoppingCart {
             total += item.getProduct().getPrice() * item.getQuantity();
         }
     }
+    
+    
 
     // Getters y Setters
     public int getId() {
