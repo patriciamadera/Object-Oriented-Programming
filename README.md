@@ -58,8 +58,67 @@ incorporando las mejores prácticas de IA y patrones de diseño.
 ![image](https://github.com/user-attachments/assets/6e440463-35e9-4688-9a3f-ad2efe399ec6)
 
 
+
+ ## Extensión de Funcionalidades mediante Herencia
+
+ Se actualizaron las clases Client y Product para convertirlas en clases abstractas e implementar un metodo a cada una
+
+ ![image](https://github.com/user-attachments/assets/7d30861f-3089-48f2-b570-4e9f59778652)
+
+ ![image](https://github.com/user-attachments/assets/d2de05f1-c5b8-43f2-ae89-b65598c46214)
+
+
+ ![image](https://github.com/user-attachments/assets/9be15889-7d14-444a-acfc-f51a211766f9)
+
+![image](https://github.com/user-attachments/assets/d21e8048-cee6-4cc8-8bbf-7f400699356b)
+
+Para cada clase se crearon dos clases la cual se extienden de esas dos principales
+
+* De la clase Product se crearon dos clases que son DigitalProduct y PhysicalProduct que heredan de la clase principal
+
+* DigitalProduct
+  ![image](https://github.com/user-attachments/assets/9458c94a-ff54-49a7-aa90-ed69e8ce013d)
+
+* PhysicalProduct
+
+ ![image](https://github.com/user-attachments/assets/68d1626e-9fcf-4241-8d20-7ef8cfbf1d22)
+
+
+  * De la clase Client se crearon dos clases que son RegularClient y Administrator que heredan de la clase principal
+
+  * RegularProduct
+
+![image](https://github.com/user-attachments/assets/9687cab0-076b-4924-a094-f7292bc61c62)
+
+
+   
+  * Administrator
  
+![image](https://github.com/user-attachments/assets/3a14c96f-0813-497d-bd3e-a3360c11da9d)
 
 
+## Polimorfismo y Sobrecarga
+
+Agregar una nueva clase llamada ProductManager
+
+![image](https://github.com/user-attachments/assets/e2b66271-bf50-4ba0-9bd3-ad81802cbf7f)
+
+ 
+Como ya se habia agregado las clases Product que se extiende a las clases PhysicalProduct y DigitalProduct, se modifico la clase ShoppingCart 
+
+![image](https://github.com/user-attachments/assets/d72403c1-840a-4daf-8660-ef8f93fa88a5)
+
+
+![image](https://github.com/user-attachments/assets/c4606846-fcc3-44fa-a437-998d1419bd9b)
+
+
+Se creo una clase Main para probarlo
+
+![image](https://github.com/user-attachments/assets/f457f45c-0413-4292-854d-c736ac050119)
+
+
+Y esto fue lo que salio en la consola al correrlo
+
+![image](https://github.com/user-attachments/assets/bb6044ea-a07e-47ba-b8db-019419af01aa)
 
 
