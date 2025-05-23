@@ -121,4 +121,17 @@ Y esto fue lo que salio en la consola al correrlo
 
 ![image](https://github.com/user-attachments/assets/bb6044ea-a07e-47ba-b8db-019419af01aa)
 
+## Encapsulamiento y Abstracta
+
+Se le hicieron modificaciones a la clase Product para que sea abstracta y se declaron los atributos como privados para evitar el acceso directo desde fuera de la clase
+
+![image](https://github.com/user-attachments/assets/7e53d0d5-197c-4894-a340-027372243a9b)
+
+Tambien la clase Client
+
+![image](https://github.com/user-attachments/assets/f396ac7c-6d20-47d1-bb7b-d617bbc9bc3d)
+
+Se modifico ShoppingCart para que acepte varios productos y mejorar los metodos
+
+![image](https://github.com/user-attachments/assets/29d3d5d4-e1a3-41be-8e89-b695253df94c)
 
