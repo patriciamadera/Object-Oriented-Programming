@@ -1,34 +1,41 @@
 package Model;
 
 public abstract class Client {
-	protected int id;
-	protected String name;
-	protected String lastName;
-	protected String email;
-	protected String password;
-	protected String address;
-	protected String phoneNumber;
-	protected String gender;
+	private int id;
+	private String name;
+	private String lastName;
+	private String email;
+	private String password;
+	private String address;
+	private String phoneNumber;
+	private String gender;
+	private ShoppingCart cart;
 
     public Client(int id, String name, String lastName, String email, String password, String address, String phoneNumber, String gender) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.gender = gender;
+        setId(id);
+        setName(name);
+        setLastName(lastName);
+        setEmail(email);
+        setPassword(password);
+        setAddress(address);
+    	setPhoneNumber(phoneNumber);
+        setGender(gender);
+        this.cart = new ShoppingCart();
     }
 
     public void updateProfile(String email, String address, String phoneNumber) {
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        setEmail(email);
+        setAddress(address);
+        setPhoneNumber(phoneNumber);
     }
 
     public void addToCart(Product product) {
-        System.out.println("Producto agregado al carrito: " + product.getName());
+        if (product != null) {
+            cart.addProduct(product);
+            System.out.println("Producto agregado al carrito: " + product.getName());
+        } else {
+            System.out.println("El producto no es válido.");
+        }
     }
 
     // Getters y Setters

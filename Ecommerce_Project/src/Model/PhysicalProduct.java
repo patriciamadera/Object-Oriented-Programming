@@ -7,15 +7,27 @@ public class PhysicalProduct extends Product {
 	public PhysicalProduct(int id, String productCode, String name, String description, int stock, double price,
 			int categoryId, boolean isActive, double weight, String dimensions) {
 		super(id, productCode, name, description, stock, price, categoryId, isActive);
-		this.weight = weight;
-        this.dimensions = dimensions;
+		setWeight(weight);
+		setDimensions(dimensions);
 	}
 	
 	public double getWeight() { return weight; }
-    public void setWeight(double weight) { this.weight = weight; }
+	public void setWeight(double weight) {
+        if (weight >= 0) {
+            this.weight = weight;
+        } else {
+            throw new IllegalArgumentException("El peso no puede ser negativo.");
+        }
+    }
 
     public String getDimensions() { return dimensions; }
-    public void setDimensions(String dimensions) { this.dimensions = dimensions; }
+    public void setDimensions(String dimensions) {
+        if (dimensions != null && !dimensions.trim().isEmpty()) {
+            this.dimensions = dimensions;
+        } else {
+            throw new IllegalArgumentException("Las dimensiones no pueden estar vacías.");
+        }
+    }
 
     @Override
     public void displayDetails() {

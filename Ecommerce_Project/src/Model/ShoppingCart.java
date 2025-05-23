@@ -22,24 +22,28 @@ public class ShoppingCart {
         this.items = new ArrayList<>();
         this.total = 0.0;
     }
+    
+    public ShoppingCart() {
+    	this(0,0);
+    }
 
     public void addProduct(Product product, int quantity) {
-        boolean found = false;
+        if (product == null || quantity <= 0) return;
+
         for (CartItem item : items) {
             if (item.getProduct().getId() == product.getId()) {
                 item.setQuantity(item.getQuantity() + quantity);
-                found = true;
-                break;
+                calculateTotal();
+                return;
             }
         }
-        if (!found) {
-            items.add(new CartItem(product, quantity));
-        }
+
+        items.add(new CartItem(product, quantity));
         calculateTotal();
     }
     
     public void addProduct(int productId, int quantity) {
-        Product product = buscarProductoPorId(productId);
+        Product product = findProductById(productId);
         if (product != null) {
             addProduct(product, quantity);
         }
@@ -48,8 +52,8 @@ public class ShoppingCart {
     // Sobrecarga 2: Agregar por nombre y precio
     public void addProduct(String name, double price, int quantity) {
         Product product = new PhysicalProduct(
-            1,                         
-            "PPT-001",                 
+            generateUniqueId(),                         
+            "FISC-" + generateUniqueId(),                 
             name,
             "Producto generado automáticamente",
             10,                         
@@ -63,7 +67,7 @@ public class ShoppingCart {
     }
 
     // Simulación de búsqueda por ID (crea un producto digital)
-    private Product buscarProductoPorId(int id) {
+    private Product findProductById(int id) {
         return new DigitalProduct(
             id,
             "DIGI-" + id,
@@ -76,6 +80,10 @@ public class ShoppingCart {
             "MP4",
             100.0
         );
+    }
+    
+    private int generateUniqueId() {
+        return (int) (Math.random() * 100000); 
     }
 
     public void removeProduct(int productId) {
@@ -96,7 +104,6 @@ public class ShoppingCart {
     }
     
     
-
     // Getters y Setters
     public int getId() {
         return id;
