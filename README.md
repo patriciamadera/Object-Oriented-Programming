@@ -135,3 +135,26 @@ Se modifico ShoppingCart para que acepte varios productos y mejorar los metodos
 
 ![image](https://github.com/user-attachments/assets/29d3d5d4-e1a3-41be-8e89-b695253df94c)
 
+
+## Implementación de Interfaces y Clases Abstractas
+
+Se creo la clase abstracta InventoryManager
+![image](https://github.com/user-attachments/assets/7d7f46b0-7e44-44f9-8ed5-8ba1838df562)
+
+
+Luego se creo la clase PhysicalInventoryManager que extiende a InventoryManager
+![image](https://github.com/user-attachments/assets/8543b2e5-9046-45ab-90e4-b050a395cba0)
+
+
+Tambien se creo la clase DigitalInventoryManager que extiende a InventoryManager
+![image](https://github.com/user-attachments/assets/748e40f2-76e8-4852-99f3-c4f6245b8e8c)
+
+Se creo la interfaz PaymentProcess
+![image](https://github.com/user-attachments/assets/040a7d48-7cc5-4bad-bc8b-493e6b4ad82c)
+
+Luego de crear la interfaz se creo una clase CardPayment que implementa la interfaz
+![image](https://github.com/user-attachments/assets/b3478413-5fcf-4662-9f99-5f19d971cc38)
+
+
+Tambien se creo la clase PayPalPayment que implementa la misma interfaz
+![image](https://github.com/user-attachments/assets/418aea38-e7a2-489d-bc77-81decca34b95)
