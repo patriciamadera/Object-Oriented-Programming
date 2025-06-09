@@ -1,5 +1,6 @@
 package Model;
 
+
 public class UIObserver implements Observer {
     @Override
     public void update(String orderStatus) {

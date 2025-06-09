@@ -1,5 +1,6 @@
 package Model;
 
+
 public class EntityFactory {
     public static Product createProduct(String type) {
         if (type.equalsIgnoreCase("digital")) {

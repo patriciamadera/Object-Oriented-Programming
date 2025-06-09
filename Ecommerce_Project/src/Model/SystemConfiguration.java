@@ -1,5 +1,6 @@
 package Model;
 
+
 public class SystemConfiguration {
     private static SystemConfiguration instance;
 

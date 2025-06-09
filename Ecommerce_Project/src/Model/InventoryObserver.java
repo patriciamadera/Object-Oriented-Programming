@@ -1,5 +1,6 @@
 package Model;
 
+
 public class InventoryObserver implements Observer {
     @Override
     public void update(String orderStatus) {
