@@ -158,3 +158,39 @@ Luego de crear la interfaz se creo una clase CardPayment que implementa la inter
 
 Tambien se creo la clase PayPalPayment que implementa la misma interfaz
 ![image](https://github.com/user-attachments/assets/418aea38-e7a2-489d-bc77-81decca34b95)
+
+
+## Implementación de Patrones de Diseño Singleton, Factory y Observer
+
+Se creo la clase SystemConfiguration con el patrón de diseño Singleton
+
+![image](https://github.com/user-attachments/assets/80a5ea3b-f4a2-4b27-901f-6d22de011029)
+
+Luego se implementó la clase EntityFactory que permite crear instancias de Product (PhysicalProduct and DigitalProduct) y Client (Administrator and RegularClient)
+
+![image](https://github.com/user-attachments/assets/1b6eae34-7521-40d4-bb3a-3278ccfbf15d)
+
+Se creo la interfaz llamada Observer
+
+![image](https://github.com/user-attachments/assets/35b9776b-823d-4536-b351-3bdeaf60d2a2)
+
+Se creó una clase OrderStatusNotifier que mantiene una lista de observadores y los notifica cuando cambia el estado de una orden.
+
+![image](https://github.com/user-attachments/assets/ede76b7d-59d6-447a-b3d4-e45b18233bef)
+
+Tambien se creo una clase InventoryObserver que se implementa de la interfaz Observer
+
+![image](https://github.com/user-attachments/assets/31d4af54-9563-4630-a4f6-4fa8cee0631b)
+
+Y otra clase que se llama UIObserver
+
+![image](https://github.com/user-attachments/assets/6e2ddd70-1f2e-4f1b-9136-ba82e83f6daf)
+
+
+En la clase Main se agregaron las implementaciones para probar lo realizado
+
+![image](https://github.com/user-attachments/assets/e7408ec4-2586-445d-b134-7df5a3d01f52)
+
+Resultado:
+
+![image](https://github.com/user-attachments/assets/7f0bbd7d-1d89-42b3-85ac-fd965228f88d)
