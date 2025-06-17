@@ -194,3 +194,57 @@ En la clase Main se agregaron las implementaciones para probar lo realizado
 Resultado:
 
 ![image](https://github.com/user-attachments/assets/7f0bbd7d-1d89-42b3-85ac-fd965228f88d)
+
+## Implementación de Manejo de Excepciones y Pruebas Unitarias
+
+Se creo un folder llamado Exception en donde se crearon dos clases:
+
+![image](https://github.com/user-attachments/assets/8715ef4e-64dc-4e80-afd1-7d784a6e645e)
+
+* InsufficientInventoryException
+![image](https://github.com/user-attachments/assets/e5cc15a2-e3b7-4566-84f6-816075a0479e)
+
+  
+* PaymentFailedException
+
+![image](https://github.com/user-attachments/assets/565dd8c3-1e8f-4a85-965d-08861321647c)
+
+
+Luego se modificaron los clases que ya estaban creadas en el proyecto para agregar metodos nuevos para manejar las excepciones
+
+
+En la clase Payment se agrego un metodo llamado processPayment()
+![image](https://github.com/user-attachments/assets/9f1c9a80-7a0d-43c8-ba88-7218da27fac6)
+
+Se modificó la interfaz PaymentProcess para agregar la excepción
+![image](https://github.com/user-attachments/assets/450fb528-d9ad-432a-b08c-358f6e3f578a)
+
+Y se modificaron las clases que implementan la interfaz mencionada anteriormente
+
+* PayPalPayment
+
+![image](https://github.com/user-attachments/assets/3ac62410-b0ef-4d92-a497-cce18846d6e1)
+
+
+* CardPayment
+![image](https://github.com/user-attachments/assets/38d821ab-6515-4d09-a204-5126a8239393)
+
+
+Se agrego al proyecto JUnit 5
+![image](https://github.com/user-attachments/assets/0834b8e0-7c5d-4999-b7b8-870e2d5776ac)
+
+
+Se creo otro folder llamado test para agregar las clases de pruebas
+
+![image](https://github.com/user-attachments/assets/07bb8de8-b6e0-48c5-b6f2-fde1c3fd5de4)
+
+* PaymentProcessTest
+
+![image](https://github.com/user-attachments/assets/c17f5758-5f7b-48b8-ab86-918a809f8fea)
+
+* ProductTest
+![image](https://github.com/user-attachments/assets/ce9bdaeb-7d30-4393-ac70-774c447b22ac)
+
+Test de Product
+![image](https://github.com/user-attachments/assets/1477afc1-5300-4b12-af52-bd2495f42a8f)
+
