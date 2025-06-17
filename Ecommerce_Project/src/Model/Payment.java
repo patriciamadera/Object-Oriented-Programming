@@ -1,5 +1,6 @@
 package Model;
 import java.time.LocalDate;
+import Exceptions.PaymentFailedException;
 
 public class Payment {
 	private int id;
@@ -16,7 +17,10 @@ public class Payment {
         this.paymentMethod = paymentMethod;
     }
 
-    public void processPayment() {
+    public void processPayment() throws PaymentFailedException {
+        if (paymentAmount <= 0) {
+            throw new PaymentFailedException("El monto del pago debe ser mayor que cero.");
+        }
         System.out.println("Pago procesado por: " + paymentAmount);
     }
 

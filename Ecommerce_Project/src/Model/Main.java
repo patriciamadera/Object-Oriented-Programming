@@ -1,68 +1,59 @@
-
-// Test
-/*package Model;
- public class Main {
-    public static void main(String[] args) {
-        Product p1 = new PhysicalProduct(1, "Laptop", "Computadora portátil", null, 0, 1200.0, 0, true, 2.5, "30x20x3");
-        Product p2 = new DigitalProduct(2, "DIG-002" ,"E-book", "Libro digital", 0 ,15.0, 1 ,true, "PDF", 5.0);
-
-        ProductManager manager = new ProductManager();
-        manager.showProductInfo(p1);
-        manager.showProductInfo(p2);
-
-        ShoppingCart cart = new ShoppingCart();
-        cart.addProduct(p1, 1);
-        cart.addProduct(2, 3);
-        cart.addProduct("Mouse", 25.5, 2);
-
-        System.out.println("\nProductos en el carrito:");
-        for (CartItem item : cart.getItems()) {
-            System.out.println("- " + item.getProduct().getName() + " x " + item.getQuantity());
-        }
-    }
-}*/
-
 package Model;
 
+import Exceptions.InsufficientInventoryException;
+import Exceptions.PaymentFailedException;
 
 public class Main {
     public static void main(String[] args) {
-        // === Singleton Pattern: System Configuration ===
+        // === Singleton Pattern ===
         SystemConfiguration config = SystemConfiguration.getInstance();
         System.out.println("Database URL: " + config.getDatabaseUrl());
         System.out.println("UI Theme: " + config.getUiTheme());
 
-        // === Factory Pattern: Creating Product and User ===
+        // === Factory Pattern ===
         Product physicalProduct = EntityFactory.createProduct("physical");
-        physicalProduct.displayDetails();
-
         Product digitalProduct = EntityFactory.createProduct("digital");
-        digitalProduct.displayDetails();
 
         Client clientUser = EntityFactory.createUser("client");
-        clientUser.displayRole();
-
         Client adminUser = EntityFactory.createUser("admin");
+
+        // Mostrar productos y roles
+        physicalProduct.displayDetails();
+        digitalProduct.displayDetails();
+        clientUser.displayRole();
         adminUser.displayRole();
 
-        // === Observer Pattern: Order Status Notification ===
+        // === Observer Pattern ===
         OrderStatusNotifier orderNotifier = new OrderStatusNotifier();
-
-        // Observers
-        UIObserver uiObserver = new UIObserver();
-        InventoryObserver inventoryObserver = new InventoryObserver();
-
-        // Subscribe observers
-        orderNotifier.addObserver(uiObserver);
-        orderNotifier.addObserver(inventoryObserver);
-
-        // Change order status to trigger notifications
+        orderNotifier.addObserver(new UIObserver());
+        orderNotifier.addObserver(new InventoryObserver());
         orderNotifier.setOrderStatus("Processing");
-        orderNotifier.setOrderStatus("Shipped");
-        orderNotifier.setOrderStatus("Delivered");
+
+        // === Manejo de excepción personalizada: InsufficientInventoryException ===
+        try {
+            System.out.println("\nReduciendo stock...");
+            physicalProduct.reduceStock(5);  // Asegúrate de que el stock inicial sea mayor o ajusta aquí
+        } catch (InsufficientInventoryException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+
+        // === Proceso de Pago con Excepciones ===
+        System.out.println("\n=== Simulación de pago con tarjeta ===");
+        CardPayment cardPayment = new CardPayment();
+        try {
+            cardPayment.startPayment(150.0);
+            cardPayment.process();
+        } catch (PaymentFailedException e) {
+            System.out.println("Error en el pago con tarjeta: " + e.getMessage());
+        }
+
+        System.out.println("\n=== Simulación de pago con PayPal ===");
+        PayPalPayment paypalPayment = new PayPalPayment();
+        try {
+            paypalPayment.startPayment(-100.0); // Monto inválido para probar excepción
+            paypalPayment.process();
+        } catch (PaymentFailedException e) {
+            System.out.println("Error en el pago con PayPal: " + e.getMessage());
+        }
     }
 }
-
-
-
-
